@@ -14,8 +14,15 @@ public abstract class SavingAccount extends BankAccount {
 
 	public void withdraw (float accBal)
 	{
-		System.out.println("Account No is:"+ " "+this.getAccNo()+"  "+"Account Name is:"+"  "+this.getAccNm()+
-				"Account Balance is:"+" "+accBal);
+		if(this.isSalaried) {
+			
+			System.out.println("Not show my Account_Details");
+		}
+		else {
+		
+		System.out.println("Account No is:"+ " "+this.getAccNo()+"  "+"Account Name is:"+" "+this.getAccNm()+ " ,"
+				+"Account Balance is:"+" "+accBal);
+	}
 	}
 	
 	@Override

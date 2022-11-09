@@ -11,8 +11,22 @@ public abstract class CurrentAccount extends BankAccount  {
 	
 	public void withdraw (float accBal) 
 	{
-		System.out.println("Account No is:"+ "  "+this.getAccNo()+ "  "+"Account Name is:"+ " "+this.getAccNm()+
-				"Account Balance is:"+"  "+(accBal + creditLimit));
+		
+		float totalAmount= accBal;
+		if(creditLimit >=40000)
+		{
+			System.out.println("you exceed your limt!"+" ,"+"Your current Balance:"+this.getAccBal());
+			
+		}else if(creditLimit <= 40000) {
+			float data=  accBal - this.creditLimit ;
+			
+			System.out.println("Your transcation is in process!"+", "+"Account Balance:"+data);
+			
+		} else {
+		 // Here is money is not with drawn then it can show all the details.
+		System.out.println("Account No is:"+" "+this.getAccNo()+" ,"+"Account Name is:"+this.getAccNm()+ ", "
+				+"Account Balance is:"+"  "+(totalAmount));
+	}
 	}
 	
 	@Override
